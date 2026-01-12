@@ -1,26 +1,14 @@
 
+
 //Personalizacion de consola 
 const bg= "linear-gradient(45deg,rgba(52,152,219,1) 0%, rgba(26,188,156,1)50%)";
 //const style_console `background: ${bg}; color:white; border-radius:6px; padding:4px;  `
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 1. Declaracion de variables utilizando el prefijo VAR
 var miNombre = "Blanca Sarahi"
 var misApellidos;
 
 console.warn("--Declaracion de variables utilizando el prefijo var--")
-
 //Utilizaremos la funcion console.log para imprimir el valor actual de la variable
 console.log("El valor de la variable miNombre es =", miNombre);
 console.log("El valor de la variable misApellidos es =", misApellidos);
