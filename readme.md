@@ -19,3 +19,5 @@ contexto swe control de versiones y desarrollo colaborativo utilizando Git y Git
 |No.| Descripcion | Potenciador | Estatus |
 |---|---|---|---|
 |1.| Declaracion de variables |1| 💻 En progreso|
+|2.| Tipos de datos|7| Terminado|
+jsbdfhjashdfh
