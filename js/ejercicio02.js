@@ -1,7 +1,7 @@
 // Tipos de datos en Java Script
 
 // Personalización de salidas a Consola
-console.log("%cEjercicio 02: Tipos de Datos ", style_console);
+console.log("%cEjercicio 02: Tipos de Datos ");
 
 // 1. Undefined - valor por defecto asignado a variables declaradas pero no inicializadas, no es igual a NULL.
 console.warn("1.- UNDEFINED (No Definido)")
