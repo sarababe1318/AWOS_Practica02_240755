@@ -30,7 +30,7 @@ console.warn("nombreUsuario = Marco, generoUsuario = H")
 saludarUsuario("Marco", "H");
 //Test 2;
 console.warn("nombreUsuario = Vanessa, generoUsuario = M")
-saludarUsuario("Vanessa", "M");
+saludarUsuario("Sara", "M");
 //Test 3;
 console.warn("nombreUsuario = Jan, generoUsuario = NULL")
 saludarUsuario("Jan", null);
@@ -116,3 +116,77 @@ console.log("Test 4 usuario: marcor, password: abcde")
 loginStatus = login("marcor", "abcde");
 
 console.log(`$(loginStatus? "El usuario admin logeado correctamente.": "Hubo un error en el login del usuario admin." }`);
+
+//Funciones anonimas sin parmetros (version extendida)
+lastLogin = new Date ();
+    isNewUser = function (){
+    const hoy = new Date();
+
+    return (
+        lastLogin.getFullYear() === hoy.getFullYear() &&
+        lastLogin.getMonth() === hoy.getMonth() &&
+        lastLogin.getDate() === hoy.getDate()
+    );
+};
+    console.warn("5.- Funciones anonimas sin parametros");
+
+    console.log("Test1- fecha del ultimo accesso es igual a la fecha de hoy");
+    console.log(`La fecha del ultimo acceso es:${lastLogin}`);
+    console.log(`El usuario logeado es: ${isNewUser()? "Nuevo usuario":"Usuario antiguo"}`);
+
+    console.log("---------------------------------------------------------------------");
+    lastLogin = new Date("2025-12-31");
+    console.log("Test2- Fecha de ultimo acceso es diferente a la fecha de hoy");
+    console.log(`La frecha del ultimo acceso es :${lastLogin}`);
+    console.log(`El usuario logeado es: ${isNewUser()? "Nuevo usuario":"Usuario antiguo"}`);
+
+
+
+//funciones anonimas con párametros  (version arrow lambda)
+
+const sumar = (a,b) =>{
+    let resultado = a+b;
+    return resultado;
+}
+console.warn ("6. Funciones anonimas con parametros ");
+console.log (`El resultado de la sumade 15+ 83 es : ${sumar(15,83)}`);
+
+/* cuando la funcion anonima tiene ubna sola linea de opracion se puede usar una version simplificada que no usa {} (llaves, ni la palabra reservada)*/
+const multiplicar = (a,b) => a*b;
+console.log(`El resultado de la multiplicacion de 15 * 125 es: ${multiplicar(15,125)} `)
+
+// 7. Funciones Callback (Regreaso de llamado)
+console.warn("7. Funciones Anónimas Callback (Respuesta)")
+const recoverPassword = function(email, callback)
+{
+
+    // Generamos el código a enviar al usuario.
+    const recoveryCode= Math.floor(1000000 + Math.random()*900000)
+
+    console.log(`
+=======================================================================
+Solicitud de recuperación recibida
+Correo del usuario sollicitante: ${email}
+Generando Código de Recuperación...
+Código de Seguridad Generado: ${recoveryCode}
+Enviando el correo al usuario...
+Correo Enviado a : ${email}, con el código de seguridad: ${recoveryCode}
+=======================================================================`);
+
+
+// definiendo la respues del sistema
+const response ={
+    status: "OK",
+    message: "Código de recuperación enviado satisfactoriamente."
+};
+
+callback(response);
+};
+
+// Invocación de una función callback
+recoverPassword("240755@gmail.com", 
+    function(systemResponse){
+        console.log("Respuesta del sistema: ");
+        console.log(systemResponse.message);
+    });
+
