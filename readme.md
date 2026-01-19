@@ -20,3 +20,4 @@ contexto swe control de versiones y desarrollo colaborativo utilizando Git y Git
 |---|---|---|---|
 |1.| Declaracion de variables |1| 💻 Terminado|
 |2.| Tipos de datos|7| Terminado|
+|3.|Funciones|9|finalizado |
